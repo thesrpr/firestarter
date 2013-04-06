@@ -1,0 +1,120 @@
+// FIX: A fixed top-bar partly disappears behind the wpadminbar 
+body.logged-in .fixed {
+	top: 28px; // the wpadminbar has a height of 28px
+}
+// FIX: sticky posts are receiving attributes from sticky top-bar
+article.fixed {position: static; left: auto;top: auto !important; z-index: 1;}
+
+/* WordPress classes */
+.alignleft,
+img.alignleft {
+	display: inline;
+	float: left;
+  margin-right: 1.5em;
+}
+.alignright,
+img.alignright {
+	display: inline;
+	float: right;
+  margin-left: 1.5em;
+}
+.aligncenter,
+img.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-smiley { 
+	max-height: 1em;
+	margin:0 !important;
+}
+
+.entry-content .gallery img  {@include  thumb;}
+
+.entry-content .featured-image {
+	@include grid-column(9,$center:true);
+	margin-bottom: 1em;
+	
+	img {@include thumb;}
+}
+
+blockquote.left {
+	float: left;
+	margin-left: 0;
+	margin-right: 20px;
+	text-align: right;
+	width: 33%;
+}
+blockquote.right {
+	float: right;
+	margin-left: 20px;
+	margin-right: 0;
+	text-align: left;
+	width: 33%;
+}
+
+.entry-meta {float: right; }
+.entry-content {padding-top: 2em;}
+
+.post_nav {
+	@include grid-row();
+	margin: 1em auto;
+	[class^="icon-"] {color: $primary-color;}
+	
+}
+
+.post-meta .post-categories, .post-meta .post-tags {
+	@include grid-column(6);
+}
+
+#comments {
+	.commentlist {
+		.comment {@include  panel;}
+		li {list-style: none; }
+		.depth-2 {margin-left: 2%;}
+		.depth-3 {margin-left: 4%;}
+		.depth-4 {margin-left: 6%;}
+		.depth-5 {margin-left: 8%;}
+		
+		.byuser {
+			@include  panel($primary-color);
+			[class^="icon-"], a  {color: white;}
+			}
+	}
+}
+
+.widget {
+	@include panel();
+	@include radius();
+	li {margin-left: 1em;}
+}
+// FIX: A fixed top-bar partly disappears behind the wpadminbar 
+body.logged-in .fixed {
+	top: 28px; // the wpadminbar has a height of 28px
+}
+// FIX: sticky posts are receiving attributes from sticky top-bar
+article.fixed {position: static; left: auto;top: auto !important; z-index: 1;}
+
+body.home {
+	.post {
+		@include grid-row();
+		@include panel();
+	}
+	.post-meta .post-categories, .post-meta .post-comments, .post-meta .post-tags {
+		@media #{$small} {@include grid-column(4);}
+	}
+		
+}
+
+body.single [role="main"], body.page [role="main"] {
+	@media #{$small} { @include grid-column(8);}
+	}
+body.single [role="complementary"], body.page [role="complementary"] {
+	@media #{$small} { @include grid-column(4);}
+	}
+
+body.single .post-meta .post-categories, body.single .post-meta .post-tags {
+	@include grid-column(6);
+}

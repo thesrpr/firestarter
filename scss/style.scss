@@ -1,0 +1,29 @@
+/*!
+Theme Name:		Firestarter
+Description:	Base Starter Theme Using Zurb Foundation
+Version:			1.0 (Foundation 4.1.1)
+Author:			Corey Ellis (thesrpr)
+Author URI: http://theseniorpartners.com
+*/
+
+@import  "settings";
+@import "foundation";
+@import "bourbon/bourbon";
+@import "font-awesome";
+@import "colors/colors";
+@import "wordpress";
+
+
+#sitewrap {@include grid-row(); padding: 1em;}
+/* General Styles */
+a {transition: all .2s linear;}
+
+#scroll-top {
+	@include button($bg: $secondary-color, $radius:10px, $padding: $button-sml);
+	@include  single-transition;
+	@include  inset-shadow;
+	position:fixed; 
+	z-index:9999; 
+	bottom:5em;
+	right: .5em;
+}
