@@ -35,12 +35,13 @@ function thesrpr_register_styles_scripts()
 		}
 	wp_enqueue_script('foundation', get_template_directory_uri().'/js/foundation.min.js', array('jquery'),'',true);
 	wp_enqueue_script('picturefill', get_template_directory_uri().'/js/picturefill.min.js', array('jquery'),'',true);
+	wp_enqueue_script('swipebox',  get_template_directory_uri().'/js/jquery.swipebox.min.js', array('jquery'), '', true);
+
 	wp_enqueue_script('easing',  get_template_directory_uri().'/js/jquery.easing.min.js', array('jquery'), '', true);
 	wp_enqueue_script('jquery-timing',  get_template_directory_uri().'/js/jquery-timing.min.js', array('jquery'), '', true);
 	wp_enqueue_script('jkit',  get_template_directory_uri().'/js/jquery.jkit.min.js', array('jquery'), '', true);
 	wp_enqueue_script('custom',  get_template_directory_uri().'/js/custom.js', array('jquery','foundation'),'', true);
 	
-	wp_enqueue_script('live-reload',  get_template_directory_uri().'/js/livereload.js', array('jquery'),'', true);
   }
 }
 
@@ -57,8 +58,9 @@ function thesrpr_includes() {
 
 add_action('init', 'thesrpr_includes');
 
+/* Theme Options */
 if ( !function_exists( 'optionsframework_init' ) ) {
-	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/backend/options' );
+	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/backend/options/' );
 	require_once dirname( __FILE__ ) . '/backend/options/options-framework.php';
 }
 

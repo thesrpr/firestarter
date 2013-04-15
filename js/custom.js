@@ -27,6 +27,11 @@ if ( $('iframe[src*="vimeo.com"]').exists() ) {
 	$('iframe[src*="vimeo.com"]').wrap('<div class="flex-video widescreen" />');
 };
 
+// Add Lightbox Functions
+if ( $('a[rel="swipebox"]').exists() ) {
+	$('a[rel="swipebox"]').swipebox();
+}
+
 })(jQuery, this);
 
 

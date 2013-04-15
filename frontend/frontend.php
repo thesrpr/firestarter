@@ -239,20 +239,14 @@ function foundation_pagination($pages = '', $range = 2)
      }
 }
 
-/* add PrettyPhoto to post and gallery images */
-add_filter('wp_get_attachment_link', 'add_gallery_id_rel');
-function add_gallery_id_rel($link) {
-  global $post;
-  return str_replace('<a href', '<a rel="PrettyPhoto[gallery]'.'" href', $link);
-}
-
-function insert_prettyphoto_rel($content) {
+/* add Swipebox to post images */
+function thesrpr_swipebox_rel($content) {
   $pattern = '/<a(.*?)href="(.*?).(bmp|gif|jpeg|jpg|png)"(.*?)>/i';
-    $replacement = '<a$1href="$2.$3" rel=\'PrettyPhoto\'$4>';
+    $replacement = '<a$1href="$2.$3" rel=\'swipebox\'$4>';
   $content = preg_replace( $pattern, $replacement, $content );
   return $content;
 }
-add_filter( 'the_content', 'insert_prettyphoto_rel' );
+add_filter( 'the_content', 'thesrpr_swipebox_rel' );
 
 /* Stop images getting wrapped up in p tags when they get dumped out with the_content() for easier theme styling */
 function thesrpr_remove_img_ptags($content){

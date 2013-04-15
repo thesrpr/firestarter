@@ -74,9 +74,10 @@ function thesrpr_gallery_shortcode($attr) {
 	foreach ( $attachments as $id => $attachment ) {
 		$img = wp_get_attachment_image_src( $id, $size );
 		$link =  wp_get_attachment_url( $id );
+		$title=   get_the_title($id);
 
 		$output .= "<{$itemtag}>";
-		$output .= "<a href='$link'><img src='$img[0]'/></a>";
+		$output .= "<a href='$link' rel='swipebox' title='@$title'><img src='$img[0]'/></a>";
 		$output .= "</{$itemtag}>";
 	}
 
