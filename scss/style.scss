@@ -6,15 +6,25 @@ Author:			Corey Ellis (thesrpr)
 Author URI: http://theseniorpartners.com
 */
 
+@import "defaults";
 @import "foundation";
 @import "bourbon/bourbon";
 @import "font-awesome";
 @import "colors/colors";
 @import "wordpress";
 @import "swipebox";
-@import "defaults";
 
 
 /* General Styles */
 #sitewrap {@include grid-row(); padding: 1em;}
 a {transition: all .2s linear;}
+
+#scroll-top {
+	@include button($bg: $secondary-color, $radius:$global-radius, $padding: $button-sml);
+	@include  single-transition;
+	@include  inset-shadow;
+	position:fixed; 
+	z-index:9999; 
+	bottom:5em;
+	right: .5em;
+}
