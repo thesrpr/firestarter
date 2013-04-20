@@ -81,7 +81,6 @@ $joyride-screenfill:          rgba(0,0,0,0.5) !default;
       border-#{$default-float}-color: transparent !important;
       border-#{$opposite-direction}-color: transparent !important;
       top: -($joyride-tip-nub-size*2);
-      bottom: none;
     }
     &.bottom {
       border-color: $joyride-tip-bg !important;
@@ -89,7 +88,6 @@ $joyride-screenfill:          rgba(0,0,0,0.5) !default;
       border-#{$default-float}-color: transparent !important;
       border-#{$opposite-direction}-color: transparent !important;
       bottom: -($joyride-tip-nub-size*2);
-      bottom: none;
     }
 
     &.right { right: -($joyride-tip-nub-size*2); }
@@ -157,6 +155,25 @@ $joyride-screenfill:          rgba(0,0,0,0.5) !default;
   cursor: pointer;
 }
 
+.joyride-expose-wrapper {
+  background-color: #ffffff;
+  position: absolute;
+  border-radius: 3px;
+  z-index: 102;
+  -moz-box-shadow: 0px 0px 30px #ffffff;
+  -webkit-box-shadow: 0px 0px 15px #ffffff;
+  box-shadow: 0px 0px 15px #ffffff;
+}
+
+.joyride-expose-cover {
+  background: transparent;
+  border-radius: 3px;
+  position: absolute;
+  z-index: 9999;
+  top: 0px;
+  left: 0px;
+}
+
 
 /* Styles for screens that are atleast 768px; */
 @media #{$small} {
@@ -168,14 +185,12 @@ $joyride-screenfill:          rgba(0,0,0,0.5) !default;
         border-#{$default-float}-color: transparent !important;
         border-#{$opposite-direction}-color: transparent !important;
         bottom: -($joyride-tip-nub-size*2);
-        bottom: none;
       }
       &.right {
         border-color: $joyride-tip-bg !important;
         border-top-color: transparent !important;
         border-right-color: transparent !important; border-bottom-color: transparent !important;
         top: $joyride-tip-position-offset;
-        bottom: none;
         left: auto;
         right: -($joyride-tip-nub-size*2);
       }
@@ -186,7 +201,7 @@ $joyride-screenfill:          rgba(0,0,0,0.5) !default;
         border-bottom-color: transparent !important;
         top: $joyride-tip-position-offset;
         left: -($joyride-tip-nub-size*2);
-        right: auto; bottom: none;
+        right: auto;
       }
     }
   }
