@@ -1874,14 +1874,14 @@ body.single .post-meta .post-categories, body.single .post-meta .post-tags { pos
 
 #swipebox-caption { color: white !important; font-size: 15px; line-height: 43px; }
 
-#sitewrap { width: 100%; margin-left: auto; margin-right: auto; margin-top: 0; margin-bottom: 0; max-width: 62.5em; *zoom: 1; padding: 1em; }
-#sitewrap:before, #sitewrap:after { content: " "; display: table; }
-#sitewrap:after { clear: both; }
-
-/* General Styles */
-a { transition: all .2s linear; }
-
 #scroll-top { border-style: solid; border-width: 1px; cursor: pointer; font-family: inherit; font-weight: bold; line-height: 1; margin: 0 0 1.25em; position: relative; text-decoration: none; text-align: center; display: inline-block; padding-top: 0.5625em; padding-right: 1.125em; padding-bottom: 0.625em; padding-left: 1.125em; font-size: 0.8125em; background-color: #e9e9e9; border-color: #d0d0d0; color: #333333; -webkit-border-radius: 5px; border-radius: 5px; -webkit-transition: all 300ms ease-out; -moz-transition: all 300ms ease-out; transition: all 300ms ease-out; -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset; position: fixed; z-index: 9999; bottom: 5em; right: .5em; }
 #scroll-top:hover, #scroll-top:focus { background-color: #d0d0d0; }
 #scroll-top:hover, #scroll-top:focus { color: #333333; }
 #scroll-top:active { -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2) inset; box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2) inset; }
+
+/* General Styles */
+#sitewrap { width: 100%; margin-left: auto; margin-right: auto; margin-top: 0; margin-bottom: 0; max-width: 62.5em; *zoom: 1; padding: 1em; }
+#sitewrap:before, #sitewrap:after { content: " "; display: table; }
+#sitewrap:after { clear: both; }
+
+a { transition: all .2s linear; }
