@@ -121,7 +121,7 @@ function foundation_top_bar($location) {
     wp_nav_menu(array( 
         'container' => false,                           // remove nav container
         'container_class' => 'menu',           		// class of container
-        'menu' => '',                      	        // menu name
+        'menu_id' => 'primary',                      	        // menu name
         'menu_class' => $location,         	// adding custom nav class
         'theme_location' => 'primary',                // where it's located in the theme
         'depth' => 5,                                   // limit the depth of the nav
@@ -384,17 +384,5 @@ function foundation_comments($comment, $args, $depth) {
         </section><!-- row -->
     </li>
 <?php }
-
-
-/* login css */
-function custom_login_css() { 
-echo '<link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/css/custom-login.css" />';
-}
-add_action('login_head', 'custom_login_css');
-
-add_filter( 'login_headerurl', 'custom_login_header_url' );
-function custom_login_header_url($url) {
-  return 'http://yourwebsite.com';
-}
 
 ?>

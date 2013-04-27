@@ -2,16 +2,6 @@
 
 // add content width
 if ( ! isset( $content_width ) ) $content_width = 1200;
-
-register_activation_hook( __FILE__, 'thesrpr_login_activate' );
-function thesrpr_login_activate() {
-    flush_rewrite_rules();
-}
- 
-register_deactivation_hook( __FILE__, 'thesrpr_login_deactivate' );
-function thesrpr_login_deactivate() {
-    flush_rewrite_rules();
-}
  
 
 /****** 
@@ -26,7 +16,8 @@ function thesrpr_register_styles_scripts()
     
     wp_enqueue_style('stylesheet', get_stylesheet_uri(),'','','all');
 
-	wp_enqueue_script('jquery');
+	wp_deregister_script('jquery');
+	wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js');
 	wp_enqueue_script('modernizr',  get_template_directory_uri().'/js/modernizr.custom.js');
 
 	if ($is_IE) 
@@ -100,7 +91,17 @@ $locale = get_locale();
 $locale_file = TEMPLATEPATH."/languages/$locale.php";
 if ( is_readable($locale_file) )
 	require_once($locale_file);
+	
+/* Flush Rewrites */
+add_action( 'after_switch_theme', 'thesrpr_flush_rewrite_rules' );
+function thesrpr_flush_rewrite_rules() {
+	// place custom post type functions here as well to flush permalinks
+	flush_rewrite_rules();
+}
 
+/*******
+Theme Specific Functions
+*******/
 
 /* register sidebars */
 register_sidebar(
@@ -123,6 +124,12 @@ register_sidebar(
 		'before_title'  => '<h4 class="widgettitle">',
 		'after_title'   => '</h4>'
 	)
-);		
+);	
+
+/* login image link */
+add_filter( 'login_headerurl', 'custom_login_header_url' );
+function custom_login_header_url($url) {
+  return 'http://yourwebsite.com';
+}	
 	
 ?>
