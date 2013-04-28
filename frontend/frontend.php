@@ -287,7 +287,7 @@ add_filter('the_content', 'thesrpr_remove_img_ptags');
       if (has_tag()) {
         echo '<section class="post-tags">';
         // Translators: Only translate "Tags:"
-        the_tags(__('Tags: <span class="secondary label">'), '</span> <span class="secondary label">', '</span>');
+        the_tags(__('Tags: '));
         echo '</section>';
       }
     }
