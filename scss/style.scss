@@ -1,17 +1,17 @@
 /*!
 Theme Name:		Firestarter
 Description:	Base Starter Theme Using Zurb Foundation
-Version:			1.1 (Foundation 4.1.2)
+Version:			1.2 (Foundation 4.1.5)
 Author:			Corey Ellis (thesrpr)
 Author URI: http://theseniorpartners.com
 */
 
 @import "defaults";
 @import "foundation";
+@import "wordpress";
 @import "bourbon/bourbon";
 @import "font-awesome";
 @import "colors/colors";
-@import "wordpress";
 @import "swipebox";
 
 
