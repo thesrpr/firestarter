@@ -37,7 +37,6 @@ add_action('init', 'thesrpr_register_styles_scripts');
 include_once('includes/admin.php');
 include_once('includes/foundation.php');
 include_once('includes/images.php');
-include_once('includes/metaboxes.php');
 include_once('includes/navigation.php');
 include_once('includes/shortcodes.php');
 
@@ -45,6 +44,54 @@ include_once('includes/shortcodes.php');
 if ( !function_exists( 'optionsframework_init' ) ) {
 	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/includes/options/' );
 	require_once dirname( __FILE__ ) . '/includes/options/options-framework.php';
+}
+
+/* Custom Metaboxes */
+function thesrpr_metaboxes( $meta_boxes ) {
+	$prefix = '_srpr_'; // Prefix for all fields
+	$meta_boxes[] = array(
+    'id'         => 'contact_options',
+    'title'      => 'Contact Form Options',
+    'pages'      => array( 'page' ),
+    'show_on' => array( 'key' => 'page-template', 'value' => 'templates/contact.php' ),
+    'context'    => 'normal',
+    'priority'   => 'high',
+    'show_names' => true, 
+    'fields'     => array(  
+      array(
+        'name' => 'Management Email',
+        'desc' => 'Enter address for management contact',
+        'id'   => $prefix . 'mgmt_contact',
+        'type' => 'text_medium',
+      ),
+      array(
+        'name' => 'Booking Email',
+        'desc' => 'Enter address for booking contact',
+        'id'   => $prefix . 'booking_contact',
+        'type' => 'text_medium',
+      ),
+      array(
+        'name' => 'Press Email',
+        'desc' => 'Enter address for press contact',
+        'id'   => $prefix . 'press_contact',
+        'type' => 'text_medium',
+      ),
+      array(
+        'name' => 'Web/Technical Email',
+        'desc' => 'Enter address for technical contact',
+        'id'   => $prefix . 'web_contact',
+        'type' => 'text_medium',
+      ),            
+    ),
+  );  
+	return $meta_boxes;
+}
+add_filter( 'cmb_meta_boxes', 'thesrpr_metaboxes' );
+add_action( 'init', 'thesrpr_initialize_cmb_meta_boxes', 9999 );
+function thesrpr_initialize_cmb_meta_boxes() {
+	if ( !class_exists( 'cmb_Meta_Box' ) ) {
+		require_once( 'includes/metaboxes/init.php' );
+	}
 }
 
 /* add theme support */

@@ -75,13 +75,17 @@ function optionsframework_options() {
 	);	
 		
 	$options = array();
+	
+	$options[] = array(
+		"name" => __("Basic Settings"),
+		"type" => "heading");
 		
 						
 	$options[] = array( "name" => "Show Landing Page Modal",
-						"desc" => "Show landing modal on home page?  This will produce an overlay area on the home page.  A great way to share a special announcement",
-						"id" => "landing_modal",
-						"std" => "0",
-						"type" => "checkbox");
+		"desc" => "Show landing modal on home page?  This will produce an overlay area on the home page.  A great way to share a special announcement",
+		"id" => "landing_modal",
+		"std" => "0",
+		"type" => "checkbox");
 	
 	$options[] = array(
 		"name" => "Landing Page Information",
