@@ -1147,10 +1147,6 @@ a.th { display: block; }
 .f-dropdown.medium { max-width: 500px; }
 .f-dropdown.large { max-width: 800px; }
 
-body.logged-in .fixed { top: 28px; }
-
-article.fixed { position: static; left: auto; top: auto !important; z-index: 1; }
-
 /* WordPress classes */
 .alignleft, img.alignleft { display: inline; float: left; margin-right: 1.5em; }
 
@@ -1201,7 +1197,7 @@ blockquote.right { float: right; margin-left: 20px; margin-right: 0; text-align:
 #comments .commentlist .byuser h1.subheader, #comments .commentlist .byuser h2.subheader, #comments .commentlist .byuser h3.subheader, #comments .commentlist .byuser h4.subheader, #comments .commentlist .byuser h5.subheader, #comments .commentlist .byuser h6.subheader { line-height: 1.4; }
 #comments .commentlist .byuser [class^="icon-"], #comments .commentlist .byuser a { color: white; }
 
-.widget { border-style: solid; border-width: 1px; border-color: #d9d9d9; margin-bottom: 1.25em; padding: 1.25em; background: #f2f2f2; -webkit-border-radius: 5px; border-radius: 5px; }
+.widget { border-style: solid; border-width: 1px; border-color: #d9d9d9; margin-bottom: 1.25em; padding: 1.25em; background: #f2f2f2; -webkit-border-radius: 20px; border-radius: 20px; }
 .widget h1, .widget h2, .widget h3, .widget h4, .widget h5, .widget h6, .widget p { color: #333333; }
 .widget > :first-child { margin-top: 0; }
 .widget > :last-child { margin-bottom: 0; }

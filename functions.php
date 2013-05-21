@@ -8,10 +8,8 @@ if ( ! isset( $content_width ) ) $content_width = 1200;
 Register & Enqueue Styles & Scripts
 *******/
  
-function thesrpr_register_styles_scripts()
-{
-  if ( !is_admin() )
-  {
+function thesrpr_register_styles_scripts() {
+if (!is_admin()) {
     global $is_IE;
     
     wp_enqueue_style('stylesheet', get_stylesheet_uri(),'','','all');
@@ -30,42 +28,24 @@ function thesrpr_register_styles_scripts()
 
 	wp_enqueue_script('easing',  get_template_directory_uri().'/js/jquery.easing.min.js', array('jquery'), '', true);
 	wp_enqueue_script('jquery-timing',  get_template_directory_uri().'/js/jquery-timing.min.js', array('jquery'), '', true);
-	wp_enqueue_script('jkit',  get_template_directory_uri().'/js/jquery.jkit.min.js', array('jquery'), '', true);
 	wp_enqueue_script('custom',  get_template_directory_uri().'/js/custom.js', array('jquery','foundation'),'', true);
-	
-  }
+	}
 }
-
 add_action('init', 'thesrpr_register_styles_scripts');
 
-/****** 
-Bring in front and backend function files
-*******/
- 
-function thesrpr_includes() {
-	require('frontend/frontend.php');
-	require('backend/backend.php');
- }
-
-add_action('init', 'thesrpr_includes');
+/* Global Includes */
+include_once('includes/admin.php');
+include_once('includes/foundation.php');
+include_once('includes/images.php');
+include_once('includes/metaboxes.php');
+include_once('includes/navigation.php');
+include_once('includes/shortcodes.php');
 
 /* Theme Options */
 if ( !function_exists( 'optionsframework_init' ) ) {
-	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/backend/options/' );
-	require_once dirname( __FILE__ ) . '/backend/options/options-framework.php';
+	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/includes/options/' );
+	require_once dirname( __FILE__ ) . '/includes/options/options-framework.php';
 }
-
-
-/* Register Menu */
-register_nav_menu( 'primary', 'Primary Menu' );
-
-/* add home link to nav menu */
-function home_page_menu_args( $args ) {
-$args['show_home'] = true;
-return $args;
-}
-add_filter( 'wp_page_menu_args', 'home_page_menu_args' );
-
 
 /* add theme support */
 add_theme_support( 'post-thumbnails' );
@@ -102,29 +82,6 @@ function thesrpr_flush_rewrite_rules() {
 /*******
 Theme Specific Functions
 *******/
-
-/* register sidebars */
-register_sidebar(
-	array(
-		'name' => 'blog',
-		'description'   =>  'These widgets appear on individual blog posts and the blog page template',
-		'before_widget' => '<section class="widget">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h4 class="widgettitle">',
-		'after_title'   => '</h4>'
-	)
-);	
-	
-register_sidebar(
-	array(
-		'name' => 'pages',
-		'description'   =>  'These widgets appear when the sidebar left or sidebar right template is chosen',
-		'before_widget' => '<section class="widget">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h4 class="widgettitle">',
-		'after_title'   => '</h4>'
-	)
-);	
 
 /* login image link */
 add_filter( 'login_headerurl', 'custom_login_header_url' );
