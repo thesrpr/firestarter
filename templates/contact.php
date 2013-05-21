@@ -34,10 +34,10 @@ Template Name: Contact
 		}
 	}
 	
-	$mgmt_contact = get_post_meta( $post->ID, '_cmb_mgmt_contact', true ); 
-	$booking_contact = get_post_meta( $post->ID, '_cmb_booking_contact', true ); 
-	$press_contact = get_post_meta( $post->ID, '_cmb_press_contact', true ); 
-	$web_contact = get_post_meta( $post->ID, '_cmb_web_contact', true ); 
+	$mgmt_contact = get_post_meta( $post->ID, '_srpr_mgmt_contact', true ); 
+	$booking_contact = get_post_meta( $post->ID, '_srpr_booking_contact', true ); 
+	$press_contact = get_post_meta( $post->ID, '_srpr_press_contact', true ); 
+	$web_contact = get_post_meta( $post->ID, '_srpr_web_contact', true ); 
 	
 	if(!isset($hasError)) {
 		$recipients = array(
