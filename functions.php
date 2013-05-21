@@ -22,13 +22,14 @@ function thesrpr_enqueue_scripts() {
 			wp_enqueue_script('selectivizr',  get_template_directory_uri().'/js/selectivizr-min.js', array('jquery'));
 		}
 	wp_enqueue_script('foundation', get_template_directory_uri().'/js/foundation.min.js', array('jquery'),'',true);
-	wp_enqueue_script('picturefill', get_template_directory_uri().'/js/picturefill.min.js', array('jquery'),'',true);
+	wp_enqueue_script('picturefill', get_template_directory_uri().'/js/picturefill.min.js', array('jquery'));
 	wp_enqueue_script('swipebox',  get_template_directory_uri().'/js/jquery.swipebox.min.js', array('jquery'), '', true);
 
 	wp_enqueue_script('easing',  get_template_directory_uri().'/js/jquery.easing.min.js', array('jquery'), '', true);
 	wp_enqueue_script('jquery-timing',  get_template_directory_uri().'/js/jquery-timing.min.js', array('jquery'), '', true);
 	wp_enqueue_script('custom',  get_template_directory_uri().'/js/custom.js', array('jquery','foundation'),'', true);
 }
+
 add_action( 'wp_enqueue_scripts', 'thesrpr_enqueue_styles' );
 add_action( 'wp_enqueue_scripts', 'thesrpr_enqueue_scripts' );
 
@@ -118,21 +119,45 @@ $locale_file = TEMPLATEPATH."/languages/$locale.php";
 if ( is_readable($locale_file) )
 	require_once($locale_file);
 	
-/* Flush Rewrites */
-add_action( 'after_switch_theme', 'thesrpr_flush_rewrite_rules' );
-function thesrpr_flush_rewrite_rules() {
-	// place custom post type functions here as well to flush permalinks
-	flush_rewrite_rules();
-}
-
 /*******
 Theme Specific Functions
 *******/
+
+/* Register Menu(s) */
+register_nav_menu( 'primary', 'Primary Menu' );
+
+/* Register Sidebar(s) */
+register_sidebar(
+	array(
+		'name'          => __( 'pages', 'thesrpr' ),
+		'description'   => 'These widgets appears on pages',
+		'class'         => '',
+		'before_widget' => '<section class="widget">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h4 class="widgettitle">',
+		'after_title'   => '</h4>' ) 
+);
+
+register_sidebar(
+	array(
+		'name'          => __( 'blog', 'thesrpr' ),
+		'description'   => 'These widgets appears on posts and the blog template',
+		'class'         => '',
+		'before_widget' => '<section class="widget">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h4 class="widgettitle">',
+		'after_title'   => '</h4>' ) 
+);
 
 /* login image link */
 add_filter( 'login_headerurl', 'custom_login_header_url' );
 function custom_login_header_url($url) {
   return 'http://yourwebsite.com';
 }	
-	
-?>
+
+/* Flush Rewrites */
+add_action( 'after_switch_theme', 'thesrpr_flush_rewrite_rules' );
+function thesrpr_flush_rewrite_rules() {
+	// place custom post type functions here as well to flush permalinks
+	flush_rewrite_rules();
+}

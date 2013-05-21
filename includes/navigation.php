@@ -1,15 +1,5 @@
 <?php
 
-/* Register Menu */
-register_nav_menu( 'primary', 'Primary Menu' );
-
-/* add home link to nav menu */
-function home_page_menu_args( $args ) {
-$args['show_home'] = true;
-return $args;
-}
-add_filter( 'wp_page_menu_args', 'home_page_menu_args' );
-
 /* Nav Menu */
 //Foundation Top Bar
 function foundation_top_bar($location) {
@@ -93,6 +83,13 @@ function thesrpr_strip_empty_classes($menu) {
     return $menu;
 }
 add_filter ('wp_nav_menu','thesrpr_strip_empty_classes');
+
+// add home link to nav menu 
+function home_page_menu_args( $args ) {
+$args['show_home'] = true;
+return $args;
+}
+add_filter( 'wp_page_menu_args', 'home_page_menu_args' );
 
 /* Pagination */
 function foundation_pagination($pages = '', $range = 2)

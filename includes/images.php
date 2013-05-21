@@ -141,9 +141,9 @@ function responsive_featured_image() {
 	global $post; 
 	$thumb = get_post_thumbnail_id();
 	$img_url = wp_get_attachment_url( $thumb,'full' ); 
-	$small_image = aq_resize( $img_url, 400, 300, false );
-	$medium_image = aq_resize( $img_url, 800, 600, false );
-	$large_image = aq_resize( $img_url, 1200, 800, false );
+	$small_image = aq_resize( $img_url, 400);
+	$medium_image = aq_resize( $img_url, 800);
+	$large_image = aq_resize( $img_url, 1200);
 	$title = get_the_title($thumb); 
 	
 

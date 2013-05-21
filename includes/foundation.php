@@ -1,4 +1,5 @@
 <?php 
+// Laying out elements to match the foundation styling
  /* password protected post form */
 add_filter( 'the_password_form', 'thesrpr_custom_password_form' );
 
@@ -31,9 +32,7 @@ function foundation_comments($comment, $args, $depth) {
             	</section>
             	<section class="small-9 columns">
 	            	<time datetime="<?php echo comment_time('Y-m-j'); ?>">
-	            		<i class="icon-calendar"></i>
-	            		<a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
-		            	<?php comment_time('F jS, Y'); ?> </a>
+	            		<i class="icon-calendar"></i><?php comment_time('F jS, Y'); ?> 
 		            </time>
 		            <?php edit_comment_link(__('Edit'),'<span><i class="icon-edit"></i>', '</span>'); ?>
 		            <?php printf(__('<h4>%s</h4>'), get_comment_author_link()) ?>
@@ -45,7 +44,7 @@ function foundation_comments($comment, $args, $depth) {
 				    <?php endif; ?>
 				    <?php comment_text() ?>
           </section>
-          <section class="small-2 columns">
+          <section class="large-3 columns">
                 <i class="icon-comment"></i>
                 <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
         	</section>

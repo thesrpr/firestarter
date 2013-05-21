@@ -1156,20 +1156,18 @@ a.th { display: block; }
 
 .wp-smiley { max-height: 1em; margin: 0 !important; }
 
-.entry-content .gallery img { line-height: 0; display: inline-block; border: solid 4px white; -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2); box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2); }
-.entry-content .gallery img:hover, .entry-content .gallery img:focus { -webkit-box-shadow: 0 0 6px 1px rgba(43, 166, 203, 0.5); box-shadow: 0 0 6px 1px rgba(43, 166, 203, 0.5); }
-
-.entry-content .featured-image { position: relative; padding-left: 0.9375em; padding-right: 0.9375em; width: 75%; margin-left: auto; margin-right: auto; float: none !important; float: left; margin-bottom: 1em; }
-.entry-content .featured-image img { line-height: 0; display: inline-block; border: solid 4px white; -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2); box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2); }
-.entry-content .featured-image img:hover, .entry-content .featured-image img:focus { -webkit-box-shadow: 0 0 6px 1px rgba(43, 166, 203, 0.5); box-shadow: 0 0 6px 1px rgba(43, 166, 203, 0.5); }
-
 blockquote.left { float: left; margin-left: 0; margin-right: 20px; text-align: right; width: 33%; }
 
 blockquote.right { float: right; margin-left: 20px; margin-right: 0; text-align: left; width: 33%; }
 
 .entry-meta { float: right; }
 
-.entry-content { padding-top: 2em; }
+.entry-content .gallery img { line-height: 0; display: inline-block; border: solid 4px white; -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2); box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2); }
+.entry-content .gallery img:hover, .entry-content .gallery img:focus { -webkit-box-shadow: 0 0 6px 1px rgba(43, 166, 203, 0.5); box-shadow: 0 0 6px 1px rgba(43, 166, 203, 0.5); }
+.entry-content .featured-image { position: relative; padding-left: 0.9375em; padding-right: 0.9375em; width: 75%; margin-left: auto; margin-right: auto; float: none !important; float: left; margin-bottom: 1em; }
+.entry-content .featured-image img { line-height: 0; display: inline-block; border: solid 4px white; -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2); box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2); }
+.entry-content .featured-image img:hover, .entry-content .featured-image img:focus { -webkit-box-shadow: 0 0 6px 1px rgba(43, 166, 203, 0.5); box-shadow: 0 0 6px 1px rgba(43, 166, 203, 0.5); }
+.entry-content ul:not(.gallery) li, .entry-content ol li { margin-left: 1.25em; }
 
 .post_nav { width: 100%; margin-left: auto; margin-right: auto; margin-top: 0; margin-bottom: 0; max-width: 62.5em; *zoom: 1; margin: 1em auto; }
 .post_nav:before, .post_nav:after { content: " "; display: table; }
@@ -1203,7 +1201,7 @@ blockquote.right { float: right; margin-left: 20px; margin-right: 0; text-align:
 .widget > :last-child { margin-bottom: 0; }
 .widget h1, .widget h2, .widget h3, .widget h4, .widget h5, .widget h6 { line-height: 1; margin-bottom: 0.625em; }
 .widget h1.subheader, .widget h2.subheader, .widget h3.subheader, .widget h4.subheader, .widget h5.subheader, .widget h6.subheader { line-height: 1.4; }
-.widget li { margin-left: 1em; }
+.widget li { margin-left: 1.25em; }
 
 body.logged-in .fixed { top: 28px; }
 
@@ -1223,7 +1221,8 @@ body.home .post h1.subheader, body.home .post h2.subheader, body.home .post h3.s
 
 @media only screen and (min-width: 48em) { body.single [role="complementary"], body.page [role="complementary"] { position: relative; padding-left: 0.9375em; padding-right: 0.9375em; width: 33.33333%; float: left; } }
 
-body.single .post-meta .post-categories, body.single .post-meta .post-tags { position: relative; padding-left: 0.9375em; padding-right: 0.9375em; width: 50%; float: left; }
+body.single .post-meta .post-categories { position: relative; padding-left: 0.9375em; padding-right: 0.9375em; width: 50%; float: left; }
+body.single .post-meta .post-tags { position: relative; padding-left: 0.9375em; padding-right: 0.9375em; width: 50%; float: left; }
 
 /*  Font Awesome 3.0 the iconic font designed for use with Twitter Bootstrap ------------------------------------------------------- The full suite of pictographic icons, examples, and documentation can be found at: http://fortawesome.github.com/Font-Awesome/
  License ------------------------------------------------------- • The Font Awesome font is licensed under the SIL Open Font License - http://scripts.sil.org/OFL • Font Awesome CSS, LESS, and SASS files are licensed under the MIT License - http://opensource.org/licenses/mit-license.html • The Font Awesome pictograms are licensed under the CC BY 3.0 License - http://creativecommons.org/licenses/by/3.0/ • Attribution is no longer required in Font Awesome 3.0, but much appreciated: "Font Awesome by Dave Gandy - http://fortawesome.github.com/Font-Awesome"
