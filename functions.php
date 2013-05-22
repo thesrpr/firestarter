@@ -13,8 +13,7 @@ Register & Enqueue Styles & Scripts
  
 function thesrpr_enqueue_scripts() {
     global $is_IE;
-    wp_deregister_script('jquery');
-	wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js');
+	wp_enqueue_script('jquery');
 	wp_enqueue_script('modernizr',  get_template_directory_uri().'/js/modernizr.custom.js');
 
 	if ($is_IE) 
