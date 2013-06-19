@@ -13,7 +13,7 @@
 //@codekit-prepend "picturefill.min.js";
 //@codekit-prepend "jquery-timing.min.js";
 //@codekit-append "jquery.scrolltop.min.js"; 
-//@codekit-append "jquery.swipebox.min.js"; 
+
 
 jQuery(document).foundation();
 
