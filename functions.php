@@ -21,7 +21,7 @@ function thesrpr_enqueue_scripts() {
 			wp_enqueue_script('selectivizr',  get_template_directory_uri().'/js/selectivizr-min.js', array('jquery'));
 		}
 	wp_enqueue_script('swipebox',  get_template_directory_uri().'/js/jquery.swipebox.min.js', array('jquery'), '', true);
-	wp_enqueue_script('sitewide', get_template_directory_uri().'/js/min/sitewide.min.js', array('jquery'),'',true);
+	wp_enqueue_script('frontend', get_template_directory_uri().'/js/min/frontend.min.js', array('jquery'),'',true);
 }
 
 add_action( 'wp_enqueue_scripts', 'thesrpr_enqueue_styles' );
